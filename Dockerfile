@@ -10,9 +10,9 @@ RUN apt-get update \
 COPY ./requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY saved_models/ app/saved_models/ 
+COPY saved_models/ /saved_models/ 
 COPY app/     app/
 
 RUN python -c "import nltk; nltk.download('stopwords', quiet=True)"
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.fastapi_app:app", "--host", "0.0.0.0", "--port", "8000"]
