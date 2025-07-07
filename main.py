@@ -1,11 +1,10 @@
 import joblib
 from data.load_data import load_data
 from data.preprocess import preprocess_text
-from features.vectorize import vectorize_text
-from models.model_definitions import MODELS
-from models.train import train_models
-from models.evaluate import evaluate_model
-from visualization.plot_utils import plot_class_distribution, plot_model_performance
+from data.vectorize import vectorize_text
+from models.models import MODELS
+from models.train_evaluate import train_models, evaluate_model
+from utils.plots import plot_class_distribution, plot_model_performance
 
 def main():
     # Data pipeline
